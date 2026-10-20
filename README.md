@@ -67,3 +67,13 @@ Check the [FAQ](./FAQ.md) if you have any doubt or problem.
 ## License
 
 [MIT](https://kopplin.mit-license.org/) License © Sérgio Kopplin
+
+
+## Security maintenance
+
+Use Ruby 3.3 and `bundle install`, then `bundle exec jekyll build` to build the
+local theme. Dependencies list Jekyll 3.10 and the actual plugins instead of the
+`github-pages` umbrella, which pins an unused remote-theme plugin to vulnerable
+rubyzip versions. The complete Gemfile.lock is committed for Linux and macOS.
+Run `bundle exec bundler-audit check --update` to check the locked dependencies.
+The security workflow builds and audits the theme without deploying it.
